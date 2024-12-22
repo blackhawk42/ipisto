@@ -66,7 +66,7 @@ func newCommandHandler(slashCommandName string, IPURL string, client *http.Clien
 			Type: discordgo.InteractionResponseDeferredChannelMessageWithSource,
 		})
 		if err != nil {
-			slog.Info("error while responding to interaction", "error", err, "interactionid", i.Interaction.ID)
+			slog.Error("error while responding to interaction", "error", err, "interactionid", i.Interaction.ID)
 			return
 		}
 		slog.Info("interaction responded sucessfully", "interactionid", i.Interaction.ID)
