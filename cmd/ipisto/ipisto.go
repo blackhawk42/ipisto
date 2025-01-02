@@ -114,6 +114,9 @@ func main() {
 		kongCtx.Fatalf("bot token is empty")
 	}
 
+	// Setting logfmt as default format for log messages
+	slog.SetDefault(slog.New(slog.NewTextHandler(os.Stderr, nil)))
+
 	// Start of bot proper
 	slog.Info("bot started", "config", args.Config)
 
